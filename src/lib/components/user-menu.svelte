@@ -1,8 +1,16 @@
 <script lang="ts">
+	import { onMount } from "svelte";
 	import { CircleUser } from "lucide-svelte";
+	import { getIdTokenContent } from "$lib/utils/auth";
 	import { Button } from "$lib/components/ui/button";
 	import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
 	import { signOutDialog } from "$lib/components/dialogs/auth/sign-out-dialog.svelte";
+	import type { CognitoIdToken } from "types/auth";
+
+	let idToken: CognitoIdToken | undefined = undefined;
+	onMount(async () => {
+		idToken = await getIdTokenContent();
+	});
 </script>
 
 <DropdownMenu.Root>
@@ -23,8 +31,7 @@
 	<DropdownMenu.Content class="w-56">
 		<DropdownMenu.Label class="font-normal">
 			<div class="flex flex-col space-y-1">
-				<p class="text-sm font-medium leading-none">Elias</p>
-				<p class="text-muted-foreground text-xs leading-none">elias@example.com</p>
+				<p class="text-muted-foreground text-xs leading-none">{idToken?.email}</p>
 			</div>
 		</DropdownMenu.Label>
 		<DropdownMenu.Separator />
