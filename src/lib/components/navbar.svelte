@@ -10,7 +10,7 @@
 <nav class="flex justify-center sticky top-0 p-4 h-[73px] bg-white w-full border-b z-10">
 	<div class="flex items-center justify-between w-full max-w-4xl">
 		<a href="/" class="font-logo text-xl font-bold text-primary">
-			<img src="/logo.svg" alt="Logo" class="h-6" />
+			Logo
 		</a>
 		<ul class="flex items-center gap-4">
 			<li>

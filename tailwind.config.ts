@@ -67,8 +67,6 @@ const config: Config = {
 				sm: "calc(var(--radius) - 4px)"
 			},
 			fontFamily: {
-        title: ['"Playfair Display"', 'serif'],
-        logo: ['"DM Sans"', 'serif'],
 				sans: [...fontFamily.sans]
 			},
 			keyframes: {
