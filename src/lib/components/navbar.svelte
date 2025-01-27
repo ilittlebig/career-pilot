@@ -13,16 +13,15 @@
 		<a href="/" class="font-logo text-xl font-bold text-primary z-10">
 			Logo
 		</a>
-		<ul class="absolute w-full pointer-events-none">
-			<div class="flex justify-center items-center gap-x-4 pointer-events-auto">
-				<li>
-					<a href="/" class="text-sm text-muted-foreground hover:text-primary">Home</a>
-				</li>
-				<li>
-					<a href="/" class="text-sm text-muted-foreground hover:text-primary">Portfolio</a>
-				</li>
+		<div class="absolute w-full pointer-events-none">
+			<div class="flex justify-center items-center gap-x-6 pointer-events-auto">
+				<a href="/" class="text-sm text-muted-foreground hover:text-primary">Home</a>
+				<a href="/features" class="text-sm text-muted-foreground hover:text-primary">Features</a>
+				<a href="/pricing" class="text-sm text-muted-foreground hover:text-primary">Pricing</a>
+				<a href="/about" class="text-sm text-muted-foreground hover:text-primary">About</a>
+				<a href="/contact" class="text-sm text-muted-foreground hover:text-primary">Contact</a>
 			</div>
-		</ul>
+		</div>
 		{#if authenticated}
 			<div class="flex items-center gap-x-2 z-10">
 				<Button href="/dashboard">

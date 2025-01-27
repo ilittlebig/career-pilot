@@ -17,21 +17,18 @@
 			items: [
 				{ href: "/features", name: "Features" },
 				{ href: "/pricing", name: "Pricing" },
-				{ href: "/", name: "Security" },
 			],
 		},
 		{
 			title: "Company",
 			items: [
 				{ href: "/about", name: "About" },
-				{ href: "/", name: "Blog" },
 			],
 		},
 		{
 			title: "Support",
 			items: [
-				{ href: "/", name: "Documentation" },
-				{ href: "/", name: "Guides" },
+				{ href: "/", name: "Contact" },
 			],
 		},
 		{
