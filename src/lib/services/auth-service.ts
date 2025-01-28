@@ -12,9 +12,12 @@ import {
 import {
 	EasyAuth,
 	signIn,
+	confirmSignUp,
 	resetPassword,
 	confirmResetPassword,
 	confirmSignIn,
+	resendSignUpCode,
+	signUp,
 	signOut,
 	CookieStorage,
 	type SignInInput,
@@ -22,11 +25,14 @@ import {
 	type ConfirmResetPasswordInput,
 	type SignInOutput,
 	type ContinueSignInWithTOTPSetup,
+	type ConfirmSignUpInput,
+	type SignUpInput,
 	type SignUpOutput,
 } from "@ilittlebig/easy-auth";
 import { usernameStore, totpSetupDetailsStore } from "$lib/stores/auth-store.svelte";
 import { resetPasswordVerificationDialog } from "$lib/components/dialogs/auth/reset-password-verification-dialog.svelte";
 import { totpCodeDialog } from "$lib/components/dialogs/auth/totp-code-dialog.svelte";
+import { confirmSignUpDialog } from "$lib/components/dialogs/auth/confirm-sign-up-dialog.svelte";
 import { totpSetupDialog } from "$lib/components/dialogs/auth/totp-setup-dialog.svelte";
 import { newPasswordRequiredDialog } from "$lib/components/dialogs/auth/new-password-required-dialog.svelte";
 
@@ -40,6 +46,9 @@ export const handleNextStep = (nextStep: string = "", result?: SignInOutput | Si
 		case "CONTINUE_SIGN_IN_WITH_MFA_SELECTION": break;
 		case "CONFIRM_SIGN_IN_WITH_NEW_PASSWORD_REQUIRED":
 			newPasswordRequiredDialog.open = true;
+			break;
+		case "CONFIRM_SIGN_UP":
+			confirmSignUpDialog.open = true;
 			break;
 		case "CONFIRM_SIGN_IN_WITH_TOTP_CODE":
 			totpCodeDialog.open = true;
@@ -71,10 +80,24 @@ export const handleSignIn = async ({ username, password }: SignInInput) => {
 	handleNextStep(result?.nextStep?.signInStep, result);
 }
 
+export const handleSignUp = async ({ username, password }: SignUpInput) => {
+	const result = await signUp({ username, password });
+	usernameStore.value = username;
+  handleNextStep(result?.nextStep?.signUpStep, result);
+}
+
 export const handleResetPassword = async ({ username }: ResetPasswordInput) => {
 	const result = await resetPassword({ username });
 	usernameStore.value = username;
 	handleNextStep(result?.nextStep?.resetPasswordStep);
+}
+
+export const handleConfirmSignUp = async ({ confirmationCode }: ConfirmSignUpInput) => {
+	const result = await confirmSignUp({
+		username: usernameStore.value,
+		confirmationCode,
+	});
+  handleNextStep(result?.nextStep?.signUpStep, result);
 }
 
 export const handleResendResetPasswordCode = async () => {
@@ -83,6 +106,10 @@ export const handleResendResetPasswordCode = async () => {
 
 export const handleSignOut = async (isGlobal: boolean = false) => {
 	await signOut({ isGlobal });
+}
+
+export const handleResendSignUpCode = async () => {
+	await resendSignUpCode({ username: usernameStore.value });
 }
 
 export const handleConfirmResetPassword = async ({

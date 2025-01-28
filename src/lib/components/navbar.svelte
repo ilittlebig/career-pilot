@@ -10,8 +10,9 @@
 
 <nav class="flex justify-center sticky top-0 p-4 h-[73px] bg-white w-full border-b z-50">
 	<div class="flex items-center justify-between w-full max-w-6xl relative">
-		<a href="/" class="font-logo text-xl font-bold text-primary z-10">
-			Logo
+		<a href="/" class="flex items-center gap-x-2 font-bold text-lg z-10">
+			<img src="icons/rocket.svg" alt="Icon" class="w-4 h-4" />
+			Career Pilot
 		</a>
 		<div class="absolute w-full pointer-events-none">
 			<div class="flex justify-center items-center gap-x-6 pointer-events-auto">

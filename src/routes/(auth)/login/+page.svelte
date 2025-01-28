@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { handleSignIn } from "$lib/services/auth-service";
 	import { loginFormSchema } from "$lib/schemas/auth";
+	import { Button } from "$lib/components/ui/button";
 	import * as Card from "$lib/components/ui/card";
 	import * as Form from "$lib/components/ui/form";
 	import FormComponent from "$lib/components/auth/form-component.svelte";
@@ -25,5 +26,11 @@
 				<Form.Button disabled={submitting}>Submit</Form.Button>
 			{/snippet}
 		</FormComponent>
+		<div class="mt-4 text-center text-sm">
+			Don't have an account?
+			<Button href="/sign-up" variant="link" class="text-sm h-4 py-0 px-0 font-normal leading-none">
+				Sign up
+			</Button>
+		</div>
 	</Card.Content>
 </Card.Root>
