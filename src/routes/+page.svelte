@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Button } from "$lib/components/ui/button";
 	import TestimonialCard from "$lib/components/testimonial-card.svelte";
+	import CtaCard from "$lib/components/cta-card.svelte";
 	import * as Accordion from "$lib/components/ui/accordion";
 
 	interface Question {
@@ -78,7 +79,10 @@
 			Streamline Your Job Search
 			<br />
 			with
-			<span class="font-extrabold text-primary">AI-Powered</span>
+			<span class="text-primary relative">
+				AI-Powered
+				<div class="top-4 left-3 absolute bg-primary/20 w-full h-full -z-10"></div>
+			</span>
 			Applications
 		</h1>
 		<p class="text-base md:text-lg text-muted-foreground max-w-3xl">
@@ -143,7 +147,7 @@
 			<p class="text-base md:text-lg text-muted-foreground max-w-3xl">
 				Boost your productivity by tailoring resumes and cover letters in seconds. Streamline your job search with our AI-powered tools, designed to help you stand out and save time.
 			</p>
-			<Button href="/" size="lg" class="w-fit">
+			<Button href="/sign-up" size="lg" class="w-fit">
 				Get started now
 			</Button>
 		</div>
@@ -209,17 +213,5 @@
 </section>
 
 <section class="px-4 lg:px-0 w-full max-w-6xl py-12">
-	<div class="flex flex-col gap-y-12 items-center bg-secondary w-full rounded-xl p-12 relative">
-		<h1 class="text-2xl md:text-3xl font-swiss tracking-tight leading-title max-w-xl text-center z-10">
-			Take the Next Step Toward Your Dream Job Today!
-		</h1>
-		<Button size="lg" class="z-10">
-			Get started for free now
-		</Button>
-
-		<div
-			class="absolute inset-0 bg-white/30"
-			style="clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 70% 100%, 30% 100%, 0% 40%)"
-		></div>
-	</div>
+	<CtaCard />
 </section>
