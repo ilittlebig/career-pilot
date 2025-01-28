@@ -15,7 +15,6 @@
 		</a>
 		<div class="absolute w-full pointer-events-none">
 			<div class="flex justify-center items-center gap-x-6 pointer-events-auto">
-				<a href="/" class="text-sm text-muted-foreground hover:text-primary">Home</a>
 				<a href="/features" class="text-sm text-muted-foreground hover:text-primary">Features</a>
 				<a href="/pricing" class="text-sm text-muted-foreground hover:text-primary">Pricing</a>
 				<a href="/about" class="text-sm text-muted-foreground hover:text-primary">About</a>

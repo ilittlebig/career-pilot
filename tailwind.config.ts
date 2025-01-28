@@ -60,6 +60,9 @@ const config: Config = {
 					ring: "hsl(var(--sidebar-ring))",
 						},
 			},
+			lineHeight: {
+				title: "1.3 !important",
+			},
 			borderRadius: {
 				xl: "calc(var(--radius) + 4px)",
 				lg: "var(--radius)",
@@ -67,7 +70,8 @@ const config: Config = {
 				sm: "calc(var(--radius) - 4px)"
 			},
 			fontFamily: {
-				sans: [...fontFamily.sans]
+				sans: [...fontFamily.sans],
+				swiss: ['"Swiss 721 Black No 2"', ...fontFamily.sans],
 			},
 			keyframes: {
 				"accordion-down": {
