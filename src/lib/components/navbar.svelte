@@ -8,7 +8,7 @@
 	let { authenticated }: Props = $props();
 </script>
 
-<nav class="flex justify-center sticky top-0 p-4 h-[73px] bg-white w-full border-b z-10">
+<nav class="flex justify-center sticky top-0 p-4 h-[73px] bg-white w-full border-b z-50">
 	<div class="flex items-center justify-between w-full max-w-6xl relative">
 		<a href="/" class="font-logo text-xl font-bold text-primary z-10">
 			Logo
