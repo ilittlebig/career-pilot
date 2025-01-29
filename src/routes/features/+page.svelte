@@ -33,7 +33,7 @@
 
 <section class="py-32 px-4 lg:px-0 w-full bg-accent">
 	<div class="flex flex-col items-center gap-y-8 text-center">
-		<h1 class="text-3xl md:text-5xl font-swiss tracking-tight leading-title max-w-4xl">
+		<h2 class="text-3xl md:text-4xl font-swiss max-w-2xl leading-title">
 			Save Time and Land Your
 			<span class="text-primary relative">
 				Dream
@@ -44,7 +44,7 @@
 				<div class="top-4 right-3 absolute bg-primary/20 w-full h-full z-10"></div>
 			</span>
 			with Smart Tools
-		</h1>
+		</h2>
 		<p class="text-base md:text-lg text-muted-foreground max-w-3xl">
 			Leverage the power of automation, AI, and smart integrations to simplify your job search, customize your applications, and achieve career success faster.
 		</p>

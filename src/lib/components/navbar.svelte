@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Button } from "$lib/components/ui/button";
 	import UserMenu from "$lib/components/user-menu.svelte";
+	import NavigationRoute from "$lib/components/navigation-route.svelte";
 
 	interface Props {
 		authenticated: boolean;
@@ -16,10 +17,10 @@
 		</a>
 		<div class="absolute w-full pointer-events-none">
 			<div class="flex justify-center items-center gap-x-6 pointer-events-auto">
-				<a href="/features" class="text-sm text-muted-foreground hover:text-primary">Features</a>
-				<a href="/pricing" class="text-sm text-muted-foreground hover:text-primary">Pricing</a>
-				<a href="/about" class="text-sm text-muted-foreground hover:text-primary">About</a>
-				<a href="/contact" class="text-sm text-muted-foreground hover:text-primary">Contact</a>
+				<NavigationRoute href="/features">Features</NavigationRoute>
+				<NavigationRoute href="/pricing">Pricing</NavigationRoute>
+				<NavigationRoute href="/about">About</NavigationRoute>
+				<NavigationRoute href="/contact">Contact</NavigationRoute>
 			</div>
 		</div>
 		{#if authenticated}

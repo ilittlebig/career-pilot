@@ -15,18 +15,6 @@
 	const data = { username: "", password: "" };
 </script>
 
-<svelte:head>
-	<title>Jaafar - Sign Up</title>
-	<meta name="description" content="Create a Jaafar account to start automating your workflows and monitoring products effortlessly." />
-	<meta name="keywords" content="Jaafar sign up, create account, automation tools, product monitoring" />
-	<meta property="og:title" content="Jaafar - Sign Up" />
-	<meta property="og:description" content="Join Jaafar today and revolutionize the way you automate product monitoring and manage bots." />
-	<meta property="og:url" content="https://www.jaafar.app/sign-up" />
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content="Jaafar - Sign Up" />
-	<meta name="twitter:description" content="Create your Jaafar account now and experience seamless bot automation and product monitoring." />
-</svelte:head>
-
 <Card.Root class="mx-auto w-full md:max-w-sm">
 	<Card.Header>
 		<Card.Title class="text-2xl">Sign Up</Card.Title>

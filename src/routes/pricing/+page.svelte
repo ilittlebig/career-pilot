@@ -35,14 +35,14 @@
 
 <section class="py-32 px-4 lg:px-0 max-w-6xl w-full">
 	<div class="flex flex-col items-center gap-y-8 text-center">
-		<h1 class="text-3xl md:text-5xl font-swiss tracking-tight leading-title max-w-4xl">
+		<h2 class="text-3xl md:text-4xl font-swiss max-w-2xl leading-title">
 			Find the Perfect Plan for Your Job Search Success
-		</h1>
+		</h2>
 		<p class="text-base md:text-lg text-muted-foreground max-w-3xl">
 			Whether you’re exploring new opportunities or looking for a complete career upgrade, we have a plan tailored for you.
 		</p>
 	</div>
-	<div class="flex gap-x-4 mt-16 w-full">
+	<div class="flex items-center gap-x-4 mt-16 w-full">
 		<PricingPlan plan="free" />
 		<PricingPlan plan="standard" />
 		<PricingPlan plan="premium" />
