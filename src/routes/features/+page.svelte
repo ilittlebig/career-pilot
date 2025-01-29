@@ -1,7 +1,34 @@
 <script lang="ts">
 	import { Button } from "$lib/components/ui/button";
-	import { Badge } from "$lib/components/ui/badge";
 	import CtaCard from "$lib/components/cta-card.svelte";
+	import Questions from "$lib/components/questions.svelte";
+
+	const questions = [
+		{
+			question: "Can I customize my resume with Career Pilot?",
+			answer: "Yes, Career Pilot offers AI-powered resume tailoring to help match your resume to specific job descriptions in just a few clicks.",
+		},
+		{
+			question: "What job platforms does Career Pilot integrate with?",
+			answer: "Currently, Career Pilot integrates seamlessly with LinkedIn and Indeed, with more platforms to be added in the future.",
+		},
+		{
+			question: "Does Career Pilot help with cover letters?",
+			answer: "Absolutely! Our tools can generate personalized cover letters tailored to each job you apply for, saving you hours of work.",
+		},
+		{
+			question: "Is it possible to automate job applications?",
+			answer: "Yes, Career Pilot allows semi-automatic and fully automatic applications for jobs, helping you apply faster and more efficiently.",
+		},
+		{
+			question: "How does Career Pilot save me time during my job search?",
+			answer: "Career Pilot automates key tasks like resume customization, cover letter generation, and job applications, allowing you to focus on preparing for interviews.",
+		},
+		{
+			question: "Can I track the jobs I’ve applied for?",
+			answer: "Yes, Career Pilot includes a job tracking feature to help you stay organized and monitor your application progress.",
+		},
+	];
 </script>
 
 <section class="py-32 px-4 lg:px-0 w-full bg-accent">
@@ -137,6 +164,15 @@
 	></div>
 </section>
 
-<section class="px-4 lg:px-0 w-full max-w-6xl pb-12 pt-36">
+<section class="flex flex-col items-center gap-y-16 py-36 px-4 lg:px-0 w-full max-w-6xl">
+	<h2 class="text-3xl md:text-4xl text-center font-swiss max-w-2xl leading-title">
+		Frequently Asked Questions About Our Features
+	</h2>
+	<div class="flex flex-col gap-y-8 w-1/2 items-center">
+		<Questions {questions} />
+	</div>
+</section>
+
+<section class="px-4 lg:px-0 w-full max-w-6xl py-12">
 	<CtaCard />
 </section>

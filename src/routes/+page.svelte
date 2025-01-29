@@ -2,14 +2,9 @@
 	import { Button } from "$lib/components/ui/button";
 	import TestimonialCard from "$lib/components/testimonial-card.svelte";
 	import CtaCard from "$lib/components/cta-card.svelte";
-	import * as Accordion from "$lib/components/ui/accordion";
+	import Questions from "$lib/components/questions.svelte";
 
-	interface Question {
-		question: string;
-		answer: string;
-	}
-
-	const questions: Question[] = [
+	const questions = [
 		{
 			question: "What is Career Pilot, and how does it work?",
 			answer: "Career Pilot is a platform that streamlines your job search by automating key tasks like tailoring resumes, generating cover letters, and applying to jobs either semi-automatically or fully automatically. Simply upload your resume, select job listings, and let our AI handle the rest.",
@@ -201,14 +196,7 @@
 		Got Questions? We’ve Got Answers.
 	</h2>
 	<div class="flex flex-col gap-y-8 w-1/2 items-center">
-		<Accordion.Root type="single" class="flex flex-col w-full gap-y-2">
-			{#each questions as { question, answer }, index}
-				<Accordion.Item value={index.toString()} class="bg-accent rounded-xl border border-primary px-4">
-					<Accordion.Trigger>{question}</Accordion.Trigger>
-					<Accordion.Content>{answer}</Accordion.Content>
-				</Accordion.Item>
-			{/each}
-		</Accordion.Root>
+		<Questions {questions} />
 	</div>
 </section>
 
