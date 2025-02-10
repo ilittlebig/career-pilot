@@ -28,7 +28,7 @@
 		{
 			title: "Support",
 			items: [
-				{ href: "/", name: "Contact" },
+				{ href: "/contact", name: "Contact" },
 			],
 		},
 		{

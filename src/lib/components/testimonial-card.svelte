@@ -1,4 +1,4 @@
-<div class="flex flex-col gap-y-4 w-[500px] bg-accent border border-primary rounded-xl p-6 -mt-[150px] translate-y-1/2 shrink-0">
+<div class="flex flex-col gap-y-4 w-[500px] bg-accent border border-primary rounded-xl p-6 -mt-[150px] translate-y-1/2 shrink-0 shadow-[0_5px_0_#000]">
 	<img src="/icons/quote.svg" alt="Qoute" class="w-12 h-12" />
 	<div class="text-muted-foreground">
 		This platform

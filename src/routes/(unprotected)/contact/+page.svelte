@@ -1,36 +1,10 @@
 <script lang="ts">
+	import { contactPageQuestions } from "$lib/data/faq";
 	import { Button } from "$lib/components/ui/button";
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
 	import { Textarea } from "$lib/components/ui/textarea";
 	import Questions from "$lib/components/questions.svelte";
-
-	const questions = [
-		{
-			question: "How can I contact Career Pilot for support?",
-			answer: "You can contact us directly through the contact form on this page. Simply fill out your name, email, and message, and we'll get back to you as soon as possible.",
-		},
-		{
-			question: "What is the response time for support inquiries?",
-			answer: "We aim to respond to all inquiries within 24 hours. For premium users, we prioritize responses to ensure faster support.",
-		},
-		{
-			question: "Can I provide feedback or suggestions?",
-			answer: "Absolutely! We welcome all feedback and suggestions. You can use the contact form to share your thoughts and ideas with us.",
-		},
-		{
-			question: "Do you offer live chat or phone support?",
-			answer: "Currently, we offer email-based support through the contact form. Live chat and phone support may be added in the future.",
-		},
-		{
-			question: "Where can I find updates about Career Pilot?",
-			answer: "You can follow us on social media or check our blog for the latest updates, features, and announcements. Links to our platforms are in the footer.",
-		},
-		{
-			question: "What should I do if I encounter a technical issue?",
-			answer: "If you experience any technical issues, let us know through the contact form. Please include details about the problem, and we’ll work to resolve it promptly.",
-		},
-	];
 </script>
 
 <section class="py-36 px-4 lg:px-0 w-full max-w-6xl">
@@ -77,9 +51,9 @@
 
 <section class="flex flex-col items-center gap-y-16 pb-36 pt-12 px-4 lg:px-0 w-full max-w-6xl">
 	<h2 class="text-3xl md:text-4xl text-center font-swiss max-w-2xl leading-title">
-		Got Questions About Pricing? We’ve Got You Covered
+		Got Questions About Contacting Us? We’ve Got the Answers
 	</h2>
 	<div class="flex flex-col gap-y-8 w-1/2 items-center">
-		<Questions {questions} />
+		<Questions questions={contactPageQuestions} />
 	</div>
 </section>

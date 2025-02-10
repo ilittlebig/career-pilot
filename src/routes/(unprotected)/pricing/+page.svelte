@@ -1,36 +1,10 @@
 <script lang="ts">
+	import { pricingPageQuestions } from "$lib/data/faq";
 	import { Button } from "$lib/components/ui/button";
 	import { Separator } from "$lib/components/ui/separator";
 	import CtaCard from "$lib/components/cta-card.svelte";
 	import Questions from "$lib/components/questions.svelte";
 	import PricingPlan from "$lib/components/pricing-plan.svelte";
-
-	const questions = [
-		{
-			question: "What payment methods do you accept?",
-			answer: "We accept payments via major credit cards, Apple Pay, Google Pay, and local payment options like Swish. Our payment processing is powered by Stripe for a secure and seamless experience.",
-		},
-		{
-			question: "Is there a free plan available?",
-			answer: "Yes, we offer a free plan that includes basic features such as resume tailoring and LinkedIn integration. It's a great way to get started with Career Pilot!",
-		},
-		{
-			question: "Can I switch plans at any time?",
-			answer: "Absolutely! You can upgrade or downgrade your plan at any time. Changes will be applied to your next billing cycle.",
-		},
-		{
-			question: "Do you offer refunds if I’m not satisfied?",
-			answer: "Yes, we offer a 7-day money-back guarantee on all paid plans. If you're not satisfied, you can request a refund within this period.",
-		},
-		{
-			question: "Is there a discount for annual subscriptions?",
-			answer: "Yes! By choosing an annual subscription, you can save up to 20% compared to monthly billing. It's our way of thanking you for your commitment.",
-		},
-		{
-			question: "What happens if my payment fails?",
-			answer: "If your payment fails, we’ll notify you and retry the payment. You’ll have 7 days to update your payment method to avoid any interruptions to your service.",
-		},
-	];
 </script>
 
 <section class="py-32 px-4 lg:px-0 max-w-6xl w-full">
@@ -63,7 +37,7 @@
 		Got Questions About Pricing? We’ve Got You Covered
 	</h2>
 	<div class="flex flex-col gap-y-8 w-1/2 items-center">
-		<Questions {questions} />
+		<Questions questions={pricingPageQuestions} />
 	</div>
 </section>
 

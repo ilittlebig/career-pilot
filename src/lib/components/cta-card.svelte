@@ -2,7 +2,7 @@
 	import { Button } from "$lib/components/ui/button";
 </script>
 
-<div class="flex flex-col gap-y-12 items-center bg-secondary w-full rounded-xl p-12 relative">
+<div class="flex flex-col gap-y-12 items-center bg-secondary w-full rounded-xl p-12 relative shadow-[0_5px_0_#000]">
 	<h1 class="text-2xl md:text-3xl font-swiss tracking-tight leading-title max-w-xl text-center z-10">
 		Take the Next Step Toward Your Dream Job Today!
 	</h1>

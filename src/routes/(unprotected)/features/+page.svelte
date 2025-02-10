@@ -1,34 +1,8 @@
 <script lang="ts">
+	import { featuresPageQuestions } from "$lib/data/faq";
 	import { Button } from "$lib/components/ui/button";
 	import CtaCard from "$lib/components/cta-card.svelte";
 	import Questions from "$lib/components/questions.svelte";
-
-	const questions = [
-		{
-			question: "Can I customize my resume with Career Pilot?",
-			answer: "Yes, Career Pilot offers AI-powered resume tailoring to help match your resume to specific job descriptions in just a few clicks.",
-		},
-		{
-			question: "What job platforms does Career Pilot integrate with?",
-			answer: "Currently, Career Pilot integrates seamlessly with LinkedIn and Indeed, with more platforms to be added in the future.",
-		},
-		{
-			question: "Does Career Pilot help with cover letters?",
-			answer: "Absolutely! Our tools can generate personalized cover letters tailored to each job you apply for, saving you hours of work.",
-		},
-		{
-			question: "Is it possible to automate job applications?",
-			answer: "Yes, Career Pilot allows semi-automatic and fully automatic applications for jobs, helping you apply faster and more efficiently.",
-		},
-		{
-			question: "How does Career Pilot save me time during my job search?",
-			answer: "Career Pilot automates key tasks like resume customization, cover letter generation, and job applications, allowing you to focus on preparing for interviews.",
-		},
-		{
-			question: "Can I track the jobs I’ve applied for?",
-			answer: "Yes, Career Pilot includes a job tracking feature to help you stay organized and monitor your application progress.",
-		},
-	];
 </script>
 
 <section class="py-32 px-4 lg:px-0 w-full bg-accent">
@@ -37,11 +11,11 @@
 			Save Time and Land Your
 			<span class="text-primary relative">
 				Dream
-				<div class="top-4 left-3 absolute bg-primary/20 w-full h-full z-10"></div>
+				<div class="top-4 left-3 absolute bg-primary/20 w-full h-full z-10 blur"></div>
 			</span>
 			<span class="text-primary relative">
 				Job
-				<div class="top-4 right-3 absolute bg-primary/20 w-full h-full z-10"></div>
+				<div class="top-4 right-3 absolute bg-primary/20 w-full h-full z-10 blur"></div>
 			</span>
 			with Smart Tools
 		</h2>
@@ -121,12 +95,12 @@
 			Seamless Job Search Integration with
 			<span class="text-primary relative">
 				LinkedIn
-				<div class="top-4 left-2 absolute bg-primary/20 w-full h-full z-10"></div>
+				<div class="top-4 left-2 absolute bg-primary/20 w-full h-full z-10 blur"></div>
 			</span>
 			and
 			<span class="text-primary relative">
 				Indeed
-				<div class="top-4 left-2 absolute bg-primary/20 w-full h-full z-10"></div>
+				<div class="top-4 left-2 absolute bg-primary/20 w-full h-full z-10 blur"></div>
 			</span>
 			.
 		</h2>
@@ -169,7 +143,7 @@
 		Frequently Asked Questions About Our Features
 	</h2>
 	<div class="flex flex-col gap-y-8 w-1/2 items-center">
-		<Questions {questions} />
+		<Questions questions={featuresPageQuestions} />
 	</div>
 </section>
 

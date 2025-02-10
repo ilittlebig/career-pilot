@@ -1,71 +1,9 @@
 <script lang="ts">
+	import { landingPageQuestions } from "$lib/data/faq";
 	import { Button } from "$lib/components/ui/button";
 	import TestimonialCard from "$lib/components/testimonial-card.svelte";
 	import CtaCard from "$lib/components/cta-card.svelte";
 	import Questions from "$lib/components/questions.svelte";
-
-	const questions = [
-		{
-			question: "What is Career Pilot, and how does it work?",
-			answer: "Career Pilot is a platform that streamlines your job search by automating key tasks like tailoring resumes, generating cover letters, and applying to jobs either semi-automatically or fully automatically. Simply upload your resume, select job listings, and let our AI handle the rest.",
-		},
-		{
-			question: "Can I customize my applications for specific job postings?",
-			answer: "Yes, Career Pilot allows you to customize each application. Our AI analyzes job descriptions and suggests tailored changes to your resume and cover letter to highlight your relevant skills and experience.",
-		},
-		{
-			question: "How does the semi-automatic mode work?",
-			answer: "In semi-automatic mode, our platform suggests changes to your resume and cover letter based on the job description, but you have full control to review and edit them before submitting the application.",
-		},
-		{
-			question: "What is required for the fully automated mode?",
-			answer: "For the fully automated mode, you simply need to upload your resume and set preferences for the types of jobs you're looking for. Career Pilot will handle the entire application process for you, including tailoring documents and submitting applications.",
-		},
-		{
-			question: "How does Career Pilot ensure my data is secure?",
-			answer: "We prioritize your privacy and security. All your data is encrypted and stored securely, and we comply with industry-standard security practices to protect your personal information.",
-		},
-		{
-			question: "Can Career Pilot guarantee I’ll get a job?",
-			answer: "While we can’t guarantee a job, Career Pilot significantly improves your chances by optimizing your applications, saving you time, and helping you stand out in the hiring process.",
-		},
-		{
-			question: "What types of jobs can I apply for using Career Pilot?",
-			answer: "Career Pilot supports a wide range of industries and job types, from entry-level to executive roles. You can set your preferences to focus on specific industries, locations, or roles.",
-		},
-		{
-			question: "Can I track my applications through Career Pilot?",
-			answer: "Yes, Career Pilot provides an easy-to-use dashboard where you can track the progress of all your applications, including submission statuses and interview updates.",
-		},
-		{
-			question: "What happens if I want to pause or stop my job search?",
-			answer: "You can pause or stop your job search at any time through the settings in your Career Pilot account. Your data will remain saved, so you can pick up where you left off later.",
-		},
-		{
-			question: "Does Career Pilot integrate with job boards like LinkedIn and Indeed?",
-			answer: "Yes, Career Pilot integrates with major job boards like LinkedIn, Indeed, and others to provide a seamless job search experience. You can also import job listings directly into the platform for AI-driven application tailoring.",
-		},
-		{
-			question: "Is there a trial version of Career Pilot available?",
-			answer: "Yes, we offer a free trial that allows you to explore the platform’s features, including AI-assisted resume customization and application tracking, before committing to a subscription plan.",
-		},
-		{
-			question: "How much time can Career Pilot save me in my job search?",
-			answer: "Career Pilot can save you hours of manual effort by automating resume tailoring, cover letter creation, and job application submissions, allowing you to focus on preparing for interviews and finding the right job fit.",
-		},
-		{
-			question: "What are the pricing plans for Career Pilot?",
-			answer: "We offer flexible pricing plans based on your needs. You can choose between monthly and annual subscriptions, with access to all features, including AI automation and tracking tools.",
-		},
-		{
-			question: "What kind of support does Career Pilot provide?",
-			answer: "Our support team is available to help you with any questions or issues. We provide email support and a detailed help center with step-by-step guides to get you started.",
-		},
-		{
-			question: "How can I cancel my subscription?",
-			answer: "You can cancel your subscription at any time through your account settings. Your access will continue until the end of your billing period, and your data will remain saved if you choose to return later.",
-		},
-	];
 </script>
 
 <section class="py-32 px-4 lg:px-0">
@@ -76,7 +14,7 @@
 			with
 			<span class="text-primary relative">
 				AI-Powered
-				<div class="top-4 left-3 absolute bg-primary/20 w-full h-full -z-10"></div>
+				<div class="top-4 left-3 absolute bg-primary/20 w-full h-full -z-10 blur"></div>
 			</span>
 			Applications
 		</h1>
@@ -196,7 +134,7 @@
 		Got Questions? We’ve Got Answers.
 	</h2>
 	<div class="flex flex-col gap-y-8 w-1/2 items-center">
-		<Questions {questions} />
+		<Questions questions={landingPageQuestions} />
 	</div>
 </section>
 
