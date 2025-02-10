@@ -7,8 +7,10 @@
 
 <Sidebar.Provider>
 	<DashboardSidebar />
-	<div class="flex flex-col items-center min-h-screen w-full">
+	<div class="flex flex-col min-h-screen w-full">
 		<ProtectedNavbar />
-		{@render children()}
+		<div class="flex flex-col p-6">
+			{@render children()}
+		</div>
 	</div>
 </Sidebar.Provider>

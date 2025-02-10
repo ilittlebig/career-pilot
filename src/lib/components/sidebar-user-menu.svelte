@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { CircleUser } from "lucide-svelte";
+	import { ChevronUp } from "lucide-svelte";
 	import { getIdTokenContent } from "$lib/utils/auth";
-	import { Button } from "$lib/components/ui/button";
+	import * as Sidebar from "$lib/components/ui/sidebar";
 	import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
 	import { signOutDialog } from "$lib/components/dialogs/auth/sign-out-dialog.svelte";
 	import type { CognitoIdToken } from "types/auth";
@@ -16,15 +16,13 @@
 <DropdownMenu.Root>
 	<DropdownMenu.Trigger>
 		{#snippet child({ props }: { props: any })}
-			<Button
+			<Sidebar.MenuButton
 				{...props}
-				variant="ghost"
-				size="icon"
-				class="rounded-lg"
+				class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
 			>
-				<CircleUser />
-				<span class="sr-only">Toggle user menu</span>
-			</Button>
+				{idToken?.email}
+				<ChevronUp class="ml-auto" />
+			</Sidebar.MenuButton>
 		{/snippet}
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content class="w-56" align="end">

@@ -13,17 +13,16 @@
 		MessageCircle,
 	} from "lucide-svelte";
 	import * as Sidebar from "$lib/components/ui/sidebar";
-	import UserMenu from "$lib/components/user-menu.svelte";
 
 	const pages = [
 		{ url: "/dashboard", name: "Overview", icon: LayoutDashboard },
-		{ url: "/applications", name: "Job Applications", icon: Briefcase },
-		{ url: "/resumes", name: "Resumes", icon: FileText },
-		{ url: "/cover-letters", name: "Cover Letters", icon: FileSignature },
-		{ url: "/integrations", name: "Integrations", icon: Link2 },
-		{ url: "/recommendations", name: "Job Recommendations", icon: Lightbulb },
-		{ url: "/analytics", name: "Analytics", icon: BarChart3 },
-		{ url: "/settings", name: "Settings", icon: Settings },
+		{ url: "/applications", name: "Job Applications", icon: Briefcase, disabled: true },
+		{ url: "/resumes", name: "Resumes", icon: FileText, disabled: true },
+		{ url: "/cover-letters", name: "Cover Letters", icon: FileSignature, disabled: true },
+		{ url: "/integrations", name: "Integrations", icon: Link2, disabled: true },
+		{ url: "/recommendations", name: "Job Recommendations", icon: Lightbulb, disabled: true },
+		{ url: "/analytics", name: "Analytics", icon: BarChart3, disabled: true },
+		{ url: "/settings", name: "Settings", icon: Settings, disabled: true },
 	];
 
 	const helpPages = [
@@ -80,11 +79,4 @@
 			</Sidebar.GroupContent>
 		</Sidebar.Group>
 	</Sidebar.Content>
-	<Sidebar.Footer>
-		<Sidebar.Menu>
-			<Sidebar.MenuItem>
-				<UserMenu />
-			</Sidebar.MenuItem>
-		</Sidebar.Menu>
-	</Sidebar.Footer>
 </Sidebar.Root>
