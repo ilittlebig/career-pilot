@@ -1,7 +1,7 @@
 <script lang="ts">
 	interface MetricColor {
 		card: string;
-		icon: string;
+		text: string;
 	}
 
 	interface Metric {
@@ -11,17 +11,15 @@
 		icon: any;
 	}
 
-	interface Props {
-		metric: Metric;
-	}
-
-	let { metric }: Props = $props();
+	let { metric }: { metric: Metric } = $props();
 </script>
 
 <div class={[ "flex flex-col gap-y-2 border rounded-lg p-4 shadow hover:shadow-md transition-shadow duration-300 relative", metric.color.card ]}>
 	<div class="absolute top-6 right-6">
-		<metric.icon size={20} class={metric.color.icon} />
+		<metric.icon size={20} class={metric.color.text} />
 	</div>
-	<p class="text-5xl font-black">{metric.value}</p>
+	<p class={[ "text-5xl font-black", metric.color.text ]}>
+		{metric.value}
+	</p>
 	<h2 class="text-muted-foreground">{metric.name}</h2>
 </div>
