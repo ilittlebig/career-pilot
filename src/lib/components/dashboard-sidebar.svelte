@@ -40,7 +40,7 @@
 	</Sidebar.Header>
 	<Sidebar.Separator class="mx-0" />
 	<Sidebar.Content>
-		<Sidebar.Group>
+		<Sidebar.Group class="h-full">
 			<Sidebar.GroupLabel>Projects</Sidebar.GroupLabel>
 			<Sidebar.GroupContent>
 				<Sidebar.Menu>
