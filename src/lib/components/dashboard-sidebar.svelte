@@ -12,7 +12,9 @@
 		LifeBuoy,
 		MessageCircle,
 	} from "lucide-svelte";
+	import { Button } from "$lib/components/ui/button";
 	import * as Sidebar from "$lib/components/ui/sidebar";
+	import * as Card from "$lib/components/ui/card";
 
 	const pages = [
 		{ url: "/dashboard", name: "Overview", icon: LayoutDashboard },
@@ -60,7 +62,6 @@
 			</Sidebar.GroupContent>
 		</Sidebar.Group>
 		<Sidebar.Group>
-			<Sidebar.GroupLabel>Help</Sidebar.GroupLabel>
 			<Sidebar.GroupContent>
 				<Sidebar.Menu>
 					{#each helpPages as helpPage}
@@ -79,4 +80,25 @@
 			</Sidebar.GroupContent>
 		</Sidebar.Group>
 	</Sidebar.Content>
+	<Sidebar.Footer>
+		<Card.Root class="shadow-none">
+			<form>
+				<Card.Header class="p-4 pb-0">
+					<Card.Title class="text-sm">Subscribe to our newsletter</Card.Title>
+					<Card.Description>
+						Opt-in to receive updates and news.
+					</Card.Description>
+				</Card.Header>
+				<Card.Content class="grid gap-2.5 p-4">
+					<Sidebar.Input type="email" placeholder="Email" />
+					<Button
+						class="bg-sidebar-primary text-sidebar-primary-foreground w-full shadow-none"
+						size="sm"
+					>
+						Subscribe
+					</Button>
+				</Card.Content>
+			</form>
+		</Card.Root>
+	</Sidebar.Footer>
 </Sidebar.Root>

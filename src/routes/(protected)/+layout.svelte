@@ -7,9 +7,9 @@
 
 <Sidebar.Provider>
 	<DashboardSidebar />
-	<div class="flex flex-col min-h-screen w-full">
+	<div class="flex flex-col h-screen w-full">
 		<ProtectedNavbar />
-		<div class="flex flex-col p-6">
+		<div class="flex flex-col p-6 overflow-scroll">
 			{@render children()}
 		</div>
 	</div>

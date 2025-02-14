@@ -30,6 +30,7 @@
 	<DropdownMenu.Content class="w-56" align="end">
 		<DropdownMenu.Label class="font-normal">
 			<div class="flex flex-col space-y-1">
+				<p class="font-medium text-sm leading-none">Elias</p>
 				<p class="text-muted-foreground text-xs leading-none">{idToken?.email}</p>
 			</div>
 		</DropdownMenu.Label>
