@@ -10,7 +10,7 @@
 	<DashboardSidebar />
 	<div class="flex flex-col h-screen w-full">
 		<ProtectedNavbar />
-		<ScrollArea class="flex flex-col px-6">
+		<ScrollArea class="flex flex-col px-6 bg-muted/50">
 			<div class="py-6">
 				{@render children()}
 			</div>

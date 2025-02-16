@@ -1,11 +1,7 @@
 <script lang="ts">
-	import {
-		ClockIcon,
-		BriefcaseIcon,
-		MapPinIcon,
-	} from "lucide-svelte";
 	import { Button } from "$lib/components/ui/button";
 	import * as Card from "$lib/components/ui/card";
+	import RecommendedJobCard from "$lib/components/recommended-job-card.svelte";
 
 	const jobRecommendations = [
 		{
@@ -51,24 +47,7 @@
 	<Card.Root>
 		<Card.Content class="p-4">
 			{#each jobRecommendations.slice(0, 3) as job}
-				<div class="flex justify-between items-center border-b last:border-none py-3 hover:bg-muted rounded-md px-2">
-					<div class="flex flex-col">
-						<p class="text-sm text-muted-foreground">{job.company}</p>
-						<p class="text-base font-medium">{job.title}</p>
-						<p class="flex items-center gap-x-1 text-sm text-muted-foreground">
-							<MapPinIcon size={14} />
-							{job.location} •
-							<BriefcaseIcon size={14} />
-							{job.type} •
-							<ClockIcon size={14} />
-							{job.postedAgo}
-						</p>
-					</div>
-					<div class="flex gap-x-2">
-						<Button variant="outline" size="sm">Save</Button>
-						<Button size="sm">Apply Now</Button>
-					</div>
-				</div>
+				<RecommendedJobCard {job} />
 			{/each}
 			<div class="text-center pt-3">
 				<Button href="/recommendations" variant="link" size="sm">
