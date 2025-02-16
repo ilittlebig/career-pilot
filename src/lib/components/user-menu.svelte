@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { CircleUser } from "lucide-svelte";
+	import { User } from "lucide-svelte";
 	import { getIdTokenContent } from "$lib/utils/auth";
 	import { Button } from "$lib/components/ui/button";
 	import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
@@ -22,7 +22,9 @@
 				size="icon"
 				class="rounded-lg"
 			>
-				<CircleUser />
+				<div class="rounded-full border p-2 shadow-sm bg-white">
+					<User />
+				</div>
 				<span class="sr-only">Toggle user menu</span>
 			</Button>
 		{/snippet}
