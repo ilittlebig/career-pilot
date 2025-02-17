@@ -6,19 +6,17 @@
 	}
 
 	const statusColors: Record<string, string> = {
-		applied: "text-blue-600",
 		interview_scheduled: "text-yellow-700",
 		in_review: "text-purple-600",
 		rejected: "text-red-500",
 		offer_received: "text-green-600",
 		phone_interview: "text-yellow-800",
 		awaiting_response: "text-gray-600",
-		coding_challenge: "text-orange-600",
+		coding_challenge: "text-blue-600",
 		hr_interview: "text-teal-600",
 	};
 
 	const applicationStatuses = [
-		{ value: "applied", label: "Applied" },
 		{ value: "interview_scheduled", label: "Interview Scheduled" },
 		{ value: "in_review", label: "In Review" },
 		{ value: "rejected", label: "Rejected" },
@@ -35,7 +33,7 @@
 <Select.Root type="single" name="applicationStatus" bind:value>
 	<Select.Trigger class="w-[200px]">
 		{#if value}
-			<span class={statusColors[value]}>
+			<span class={[ "font-medium", statusColors[value] ]}>
 				{applicationStatuses.find(s => s.value === value)?.label}
 			</span>
 		{:else}

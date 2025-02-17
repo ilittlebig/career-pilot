@@ -4,6 +4,7 @@
 		getCoreRowModel,
 		type ColumnDef,
 		type VisibilityState,
+		type RowSelectionState,
 	} from "@tanstack/table-core";
 	import { createSvelteTable } from "$lib/components/ui/data-table";
 
@@ -14,6 +15,7 @@
 	};
 
 	let columnVisibility = $state<VisibilityState>({});
+	let rowSelection = $state<RowSelectionState>({});
 
 	let {
 		data,
@@ -32,12 +34,22 @@
 			get columnVisibility() {
 				return columnVisibility;
 			},
+			get rowSelection() {
+				return rowSelection;
+			},
 		},
 		onColumnVisibilityChange: updater => {
 			if (typeof updater === "function") {
 				columnVisibility = updater(columnVisibility);
 			} else {
 				columnVisibility = updater;
+			}
+		},
+		onRowSelectionChange: (updater) => {
+			if (typeof updater === "function") {
+				rowSelection = updater(rowSelection);
+			} else {
+				rowSelection = updater;
 			}
 		},
 		getCoreRowModel: getCoreRowModel(),
