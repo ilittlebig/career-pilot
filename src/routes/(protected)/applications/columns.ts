@@ -30,13 +30,10 @@ export const columns: ColumnDef<any>[] = [
 	{
 		id: "status",
 		header: "Status",
-		size: 60,
+		size: 100,
 		cell: ({ row }) => {
 			const value: string = row.original.status;
-			return renderComponent(DataTable.BadgeCell, {
-				value,
-				variant: value === "published" ? "default" : "outline"
-			});
+			return renderComponent(DataTable.Select, { value });
 		},
 	},
 	{
