@@ -18,9 +18,12 @@ export const columns: ColumnDef<any>[] = [
 		size: 50,
 	},
 	{
-		accessorFn: (row: any) => row.position,
 		header: "Position",
 		size: 70,
+		cell: ({ row }) => {
+			const value: string = row.original.position;
+			return renderComponent(DataTable.BadgeCell, { value, variant: "outline" });
+		},
 	},
 	{
 		accessorFn: (row: any) => formatDate(row.applicationDate),
@@ -28,12 +31,11 @@ export const columns: ColumnDef<any>[] = [
 		size: 80,
 	},
 	{
-		id: "status",
 		header: "Status",
-		size: 100,
+		size: 80,
 		cell: ({ row }) => {
 			const value: string = row.original.status;
-			return renderComponent(DataTable.Select, { value });
+			return renderComponent(DataTable.SelectCell, { value });
 		},
 	},
 	{

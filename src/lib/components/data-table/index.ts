@@ -10,7 +10,7 @@ import DataTableTable from "./data-table-table.svelte";
 import DataTableBadgeCell from "./data-table-badge-cell.svelte";
 import DataTableToolbar from "./data-table-toolbar.svelte";
 import DataTableViewOptions from "./data-table-view-options.svelte";
-import DataTableSelect from "./data-table-select.svelte";
+import DataTableSelectCell from "./data-table-select-cell.svelte";
 
 export const DataTable =	{
 	Pagination: DataTablePagination,
@@ -19,5 +19,5 @@ export const DataTable =	{
 	BadgeCell: DataTableBadgeCell,
 	Toolbar: DataTableToolbar,
 	ViewOptions: DataTableViewOptions,
-	Select: DataTableSelect,
+	SelectCell: DataTableSelectCell,
 }
