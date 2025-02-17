@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { User } from "lucide-svelte";
 	import { getIdTokenContent } from "$lib/utils/auth";
 	import { Button } from "$lib/components/ui/button";
 	import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
@@ -22,9 +21,11 @@
 				size="icon"
 				class="rounded-lg"
 			>
-				<div class="rounded-full border p-2 shadow-sm bg-white">
-					<User />
-				</div>
+				<img
+					src="/user-placeholder.png"
+					class="rounded-full border shadow-sm h-8 w-8"
+					alt="Placeholder"
+				/>
 				<span class="sr-only">Toggle user menu</span>
 			</Button>
 		{/snippet}

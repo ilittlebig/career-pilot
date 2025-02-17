@@ -19,7 +19,11 @@
 			{#each table.getHeaderGroups() as headerGroup (headerGroup.id)}
 				<Table.Row>
 					{#each headerGroup.headers as header (header.id)}
-						<Table.Head style={`width: ${header.getSize()}px;`} colspan={header.colSpan}>
+						<Table.Head
+							style={`width: ${header.getSize()}px;`}
+							colspan={header.colSpan}
+							class="first:rounded-l-md last:rounded-r-md"
+						>
 							{#if !header.isPlaceholder}
 								<FlexRender
 									content={header.column.columnDef.header}
@@ -31,11 +35,11 @@
 				</Table.Row>
 			{/each}
 		</Table.Header>
-		<Table.Body>
+		<Table.Body class="bg-background">
 			{#each table.getRowModel().rows as row (row.id)}
 				<Table.Row data-state={row.getIsSelected() && "selected"}>
 					{#each row.getVisibleCells() as cell (cell.id)}
-						<Table.Cell>
+						<Table.Cell class="first:rounded-b-md last:rounded-b-md">
 							<FlexRender
 								content={cell.column.columnDef.cell}
 								context={cell.getContext()}

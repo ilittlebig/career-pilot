@@ -120,7 +120,7 @@
 		</p>
 	</div>
 	<div class="flex flex-col gap-y-2">
-		<SearchBar class="w-96" placeholder="Filter recommended jobs…" />
+		<SearchBar class="w-[500px]" placeholder="Filter recommended jobs…" />
 		<Card.Root>
 			<Card.Content class="p-4">
 				{#each jobRecommendations as job}

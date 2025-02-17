@@ -17,7 +17,7 @@
 	<Metrics />
 	<QuickActions />
 	<Separator class="my-2" />
-	<RecentActivity />
 	<UpcomingTasks />
+	<RecentActivity />
 	<RecommendedJobs />
 </div>
