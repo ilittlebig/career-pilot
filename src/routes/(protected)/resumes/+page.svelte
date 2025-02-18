@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CirclePlus } from "lucide-svelte";
+	import { CirclePlus, Download } from "lucide-svelte";
 	import { ScrollArea } from "$lib/components/ui/scroll-area";
 	import { Button } from "$lib/components/ui/button";
 	import { DataTable } from "$lib/components/data-table";
@@ -49,6 +49,12 @@
 					<CirclePlus />
 					Create Resume
 				</Button>
+				{#snippet customBulkActions(isAnyRowSelected: boolean)}
+					<Button variant="outline" class="disabled:opacity-20" disabled={!isAnyRowSelected}>
+						<Download />
+						Download Selected Resumes
+					</Button>
+				{/snippet}
 			</DataTable.Toolbar>
 			<ScrollArea orientation="horizontal" class="w-full">
 				<DataTable.Table class="table-auto" />

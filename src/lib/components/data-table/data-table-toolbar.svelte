@@ -1,36 +1,22 @@
 <script lang="ts">
-	import { getContext } from "svelte";
-	import { Download, Trash2 } from "lucide-svelte";
+	import { getContext, type Snippet } from "svelte";
+	import { Trash2 } from "lucide-svelte";
 	import { Button } from "$lib/components/ui/button";
 	import { Separator } from "$lib/components/ui/separator";
-	import * as Select from "$lib/components/ui/select";
 	import type { Table as TableType } from "@tanstack/table-core";
 
 	interface Props {
-		table: TableType<any>;
+		children?: Snippet;
+		customBulkActions?: Snippet<[boolean]>;
 	}
 
-	const { table }: Props = getContext("data-table");
-	let { children } = $props();
+	const { table }: { table: TableType<any> } = getContext("data-table");
+	let { children, customBulkActions }: Props = $props();
 </script>
 
-{#snippet bulkActions(isSelected: boolean)}
-	<Select.Root
-		type="single"
-		name="applicationStatus"
-		disabled={!isSelected}
-	>
-		<Select.Trigger class="w-[200px] disabled:opacity-20">
-			Change Status
-		</Select.Trigger>
-		<Select.Content>
-		</Select.Content>
-	</Select.Root>
-	<Button variant="outline" class="disabled:opacity-20" disabled={!isSelected}>
-		<Download />
-		Export Selected
-	</Button>
-	<Button variant="destructive" class="disabled:opacity-20" disabled={!isSelected}>
+{#snippet bulkActions(isAnyRowSelected: boolean)}
+	{@render customBulkActions?.(isAnyRowSelected)}
+	<Button variant="destructive" class="disabled:opacity-20" disabled={!isAnyRowSelected}>
 		<Trash2 />
 		Delete Selected
 	</Button>

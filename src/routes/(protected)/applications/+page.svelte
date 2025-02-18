@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { CirclePlus } from "lucide-svelte";
+	import { CirclePlus, Download } from "lucide-svelte";
 	import { ScrollArea } from "$lib/components/ui/scroll-area";
 	import { Button } from "$lib/components/ui/button";
 	import { DataTable } from "$lib/components/data-table";
+	import * as Select from "$lib/components/ui/select";
 	import { columns } from "./columns";
 
 	const applications = [
@@ -164,6 +165,23 @@
 					<CirclePlus />
 					Log New Application
 				</Button>
+				{#snippet customBulkActions(isAnyRowSelected: boolean)}
+					<Select.Root
+						type="single"
+						name="applicationStatus"
+						disabled={!isAnyRowSelected}
+					>
+						<Select.Trigger class="w-[200px] disabled:opacity-20">
+							Change Status
+						</Select.Trigger>
+						<Select.Content>
+						</Select.Content>
+					</Select.Root>
+					<Button variant="outline" class="disabled:opacity-20" disabled={!isAnyRowSelected}>
+						<Download />
+						Export Selected
+					</Button>
+				{/snippet}
 			</DataTable.Toolbar>
 			<ScrollArea orientation="horizontal" class="w-full">
 				<DataTable.Table class="table-auto" />
