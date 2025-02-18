@@ -36,35 +36,21 @@ export const columns: ColumnDef<any>[] = [
 		size: 10,
 	},
 	{
-		accessorFn: (row: any) => row.company,
-		header: "Company",
-		size: 50,
+		accessorFn: (row: any) => row.name,
+		header: "Resume Name",
 	},
 	{
-		header: "Position",
+		accessorFn: (row: any) => formatDate(row.lastUpdated),
+		header: "Last Updated",
 		size: 70,
+	},
+	{
+		header: "File Type",
+		size: 20,
 		cell: ({ row }) => {
-			const value: string = row.original.position;
+			const value: string = row.original.fileType;
 			return renderComponent(DataTable.BadgeCell, { value, variant: "outline" });
 		},
-	},
-	{
-		accessorFn: (row: any) => formatDate(row.applicationDate),
-		header: "Application Date",
-		size: 80,
-	},
-	{
-		header: "Status",
-		size: 80,
-		cell: ({ row }) => {
-			const value: string = row.original.status;
-			return renderComponent(DataTable.SelectCell, { value });
-		},
-	},
-	{
-		accessorFn: (row: any) => row.lastActivity,
-		header: "Last Activity",
-		size: 110,
 	},
 	{
 		id: "actions",

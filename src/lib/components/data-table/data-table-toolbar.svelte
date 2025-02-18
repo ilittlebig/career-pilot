@@ -1,16 +1,17 @@
 <script lang="ts">
 	import { getContext } from "svelte";
-	import { CirclePlus, Download, Trash2 } from "lucide-svelte";
+	import { Download, Trash2 } from "lucide-svelte";
 	import { Button } from "$lib/components/ui/button";
 	import { Separator } from "$lib/components/ui/separator";
 	import * as Select from "$lib/components/ui/select";
-	import SearchBar from "$lib/components/search-bar.svelte";
 	import type { Table as TableType } from "@tanstack/table-core";
 
 	interface Props {
 		table: TableType<any>;
 	}
+
 	const { table }: Props = getContext("data-table");
+	let { children } = $props();
 </script>
 
 {#snippet bulkActions(isSelected: boolean)}
@@ -37,11 +38,7 @@
 
 <div class="flex flex-col gap-y-2">
 	<div class="flex items-center justify-between">
-		<SearchBar class="w-[500px]" placeholder="Search applications by company, position, or status…" />
-		<Button>
-			<CirclePlus />
-			Log New Application
-		</Button>
+		{@render children?.()}
 	</div>
 	<div class="flex items-center gap-x-4">
 		<p class="text-sm text-muted-foreground">
