@@ -18,7 +18,7 @@
 
 <Card.Root>
 	<Card.Content class="relative">
-		<Card.Title>{metric.value}</Card.Title>
+		<Card.Title class="text-3xl">{metric.value}</Card.Title>
 		<Card.Description>{metric.name}</Card.Description>
 		<div class="absolute top-6 right-6">
 			<metric.icon size={20} class={metric.color.text} />

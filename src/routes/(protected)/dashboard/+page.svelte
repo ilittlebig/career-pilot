@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Separator } from "$lib/components/ui/separator";
 	import RecentActivity from "$lib/components/dashboard/sections/recent-activity.svelte";
-	import QuickActions from "$lib/components/dashboard/sections/quick-actions.svelte";
 	import Metrics from "$lib/components/dashboard/sections/metrics.svelte";
 	import UpcomingTasks from "$lib/components/dashboard/sections/upcoming-tasks.svelte";
 	import RecommendedJobs from "$lib/components/dashboard/sections/recommended-jobs.svelte";
@@ -15,7 +14,6 @@
 		</p>
 	</div>
 	<Metrics />
-	<QuickActions />
 	<Separator class="my-2" />
 	<UpcomingTasks />
 	<RecentActivity />
