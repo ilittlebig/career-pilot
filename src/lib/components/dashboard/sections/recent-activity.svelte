@@ -91,7 +91,7 @@
 
 <section class="flex flex-col gap-y-4 mt-0">
 	<h2 class="text-lg font-semibold">Recent Activity</h2>
-	<Card.Root>
+	<Card.Root class="border-secondary/50">
 		<Card.Content class="p-4">
 			<Accordion.Root type="multiple" value={[ "Today" ]}>
 				{#each Object.keys(groupedActivity) as group}

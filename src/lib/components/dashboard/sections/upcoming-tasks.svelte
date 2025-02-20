@@ -20,7 +20,7 @@
 
 <section class="flex flex-col gap-y-4">
 	<h2 class="text-lg font-semibold">Upcoming Tasks</h2>
-	<Card.Root>
+	<Card.Root class="border-secondary/50">
 		<Card.Content class="p-4">
 			{#each tasks.slice(0, 3) as task}
 				<div class="flex items-center gap-x-3 p-2 rounded-lg hover:bg-muted transition border-b">

@@ -121,7 +121,7 @@
 	</div>
 	<div class="flex flex-col gap-y-2">
 		<SearchBar class="w-[500px]" placeholder="Filter recommended jobs…" />
-		<Card.Root>
+		<Card.Root class="border-secondary/50">
 			<Card.Content class="p-4">
 				{#each jobRecommendations as job}
 					<RecommendedJobCard {job} />

@@ -44,7 +44,7 @@
 
 <section class="flex flex-col gap-y-4">
 	<h2 class="text-lg font-semibold">Recommended Jobs</h2>
-	<Card.Root>
+	<Card.Root class="border-secondary/50">
 		<Card.Content class="p-4">
 			{#each jobRecommendations.slice(0, 3) as job}
 				<RecommendedJobCard {job} />
