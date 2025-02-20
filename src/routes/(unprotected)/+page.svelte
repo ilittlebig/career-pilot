@@ -46,7 +46,9 @@
 							Organize and assign tasks. With lists, teams see immediately what they need to do, which tasks are a priority, and when work is due.
 						</p>
 					</div>
-					<div class="w-[320px] h-48 bg-primary shrink-0"></div>
+					<div class="w-[320px] h-48 shrink-0">
+						<img src="/mockups/job-applications.svg" class="object-left object-contain h-full" alt="lol" />
+					</div>
 				</div>
 				<div class="flex w-full bg-background border border-primary rounded-xl pt-6 pb-6">
 					<div class="flex flex-col gap-y-3 justify-end pl-6 pb-6 pr-6">
@@ -55,7 +57,10 @@
 							Organize and assign tasks. With lists, teams see immediately what they need to do, which tasks are a priority, and when work is due.
 						</p>
 					</div>
-					<div class="w-[344px] h-48 bg-primary shrink-0"></div>
+					<div class="w-[344px] h-48 shrink-0 relative">
+						<img src="/mockups/job-application-card.svg" class="object-left object-cover h-full" alt="lol" />
+						<img src="/mockups/application-status-dropdown.svg" class="absolute -right-8 h-36 top-1/2 translate-y-5" alt="lol" />
+					</div>
 				</div>
 			</div>
 			<div class="flex flex-col gap-y-3 w-2/3 bg-white border border-primary rounded-xl p-6">
