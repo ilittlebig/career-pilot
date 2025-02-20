@@ -46,6 +46,7 @@ export const columns: ColumnDef<any>[] = [
 	},
 	{
 		header: "File Type",
+		accessorFn: (row: any) => row.fileType,
 		size: 20,
 		cell: ({ row }) => {
 			const value: string = row.original.fileType;

@@ -42,6 +42,7 @@ export const columns: ColumnDef<any>[] = [
 	},
 	{
 		header: "Position",
+		accessorFn: (row: any) => row.position,
 		size: 70,
 		cell: ({ row }) => {
 			const value: string = row.original.position;
@@ -55,6 +56,7 @@ export const columns: ColumnDef<any>[] = [
 	},
 	{
 		header: "Status",
+		accessorFn: (row: any) => row.status,
 		size: 80,
 		cell: ({ row }) => {
 			const value: string = row.original.status;

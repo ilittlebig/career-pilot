@@ -2,9 +2,11 @@
 	import { setContext, type Snippet } from "svelte";
 	import {
 		getCoreRowModel,
+		getSortedRowModel,
 		type ColumnDef,
 		type VisibilityState,
 		type RowSelectionState,
+        type SortingState,
 	} from "@tanstack/table-core";
 	import { createSvelteTable } from "$lib/components/ui/data-table";
 
@@ -16,6 +18,7 @@
 
 	let columnVisibility = $state<VisibilityState>({});
 	let rowSelection = $state<RowSelectionState>({});
+	let sorting = $state<SortingState>([]);
 
 	let {
 		data,
@@ -37,6 +40,9 @@
 			get rowSelection() {
 				return rowSelection;
 			},
+			get sorting() {
+				return sorting;
+			},
 		},
 		onColumnVisibilityChange: updater => {
 			if (typeof updater === "function") {
@@ -45,14 +51,22 @@
 				columnVisibility = updater;
 			}
 		},
-		onRowSelectionChange: (updater) => {
+		onRowSelectionChange: updater => {
 			if (typeof updater === "function") {
 				rowSelection = updater(rowSelection);
 			} else {
 				rowSelection = updater;
 			}
 		},
+		onSortingChange: updater => {
+			if (typeof updater === "function") {
+				sorting = updater(sorting);
+			} else {
+				sorting = updater;
+			}
+		},
 		getCoreRowModel: getCoreRowModel(),
+		getSortedRowModel: getSortedRowModel(),
 	});
 
 	setContext("data-table", { table });
