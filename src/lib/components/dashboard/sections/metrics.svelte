@@ -8,11 +8,11 @@
 	import MetricCard from "$lib/components/dashboard/metric-card.svelte";
 
 	const colors = {
-		blue: { card: "bg-blue-50 border-blue-200", text: "text-blue-600" },
-		yellow: { card: "bg-yellow-50 border-yellow-200", text: "text-yellow-600" },
-		green: { card: "bg-green-50 border-green-200", text: "text-green-600" },
-		purple: { card: "bg-purple-50 border-purple-200", text: "text-purple-600" },
-		gray: { card: "bg-gray-50 border-gray-200", text: "text-gray-600" }
+		blue: { border: "border-blue-200", text: "text-blue-600" },
+		yellow: { border: "border-orange-200", text: "text-yellow-600" },
+		green: { border: "border-green-200", text: "text-green-600" },
+		purple: { border: "border-purple-200", text: "text-purple-600" },
+		gray: { border: "border-gray-200", text: "text-gray-600" }
 	};
 
 	const metrics = [

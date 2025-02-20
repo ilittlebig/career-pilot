@@ -2,7 +2,7 @@
 	import * as Card from "$lib/components/ui/card";
 
 	interface MetricColor {
-		card: string;
+		border: string;
 		text: string;
 	}
 
@@ -16,7 +16,7 @@
 	let { metric }: { metric: Metric } = $props();
 </script>
 
-<Card.Root>
+<Card.Root class={metric.color.border}>
 	<Card.Content class="relative">
 		<Card.Title class="text-3xl">{metric.value}</Card.Title>
 		<Card.Description>{metric.name}</Card.Description>
