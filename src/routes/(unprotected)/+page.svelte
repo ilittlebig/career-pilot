@@ -1,5 +1,7 @@
 <script lang="ts">
+	import { ArrowRight } from "lucide-svelte";
 	import { landingPageQuestions } from "$lib/data/faq";
+	import { Separator } from "$lib/components/ui/separator";
 	import { Button } from "$lib/components/ui/button";
 	import TestimonialCard from "$lib/components/testimonial-card.svelte";
 	import CtaCard from "$lib/components/cta-card.svelte";
@@ -72,6 +74,16 @@
 						</p>
 					</div>
 			</div>
+		</div>
+		<Separator class="w-full" />
+		<div class="flex flex-col items-center gap-y-4 max-w-3xl">
+			<p class="text-base md:text-lg text-muted-foreground text-center">
+				These are just some of the features available. Explore more tools like resume tailoring, cover letters, and job recommendations.
+			</p>
+			<Button href="/features">
+				View all features
+				<ArrowRight />
+			</Button>
 		</div>
 	</div>
 </section>
