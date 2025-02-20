@@ -8,8 +8,8 @@
 	import type { Table as TableType } from "@tanstack/table-core";
 	import type { Post } from "types/post";
 
-	type TableProps = { table: TableType<Post> }
-	type Props = { class?: string }
+	type TableProps = { table: TableType<Post> };
+	type Props = { class?: string };
 
 	const { table }: TableProps = getContext("data-table");
 	let { class: className }: Props = $props();

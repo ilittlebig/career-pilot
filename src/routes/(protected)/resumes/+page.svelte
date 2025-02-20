@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CirclePlus, Download } from "lucide-svelte";
+	import { Plus, Download } from "lucide-svelte";
 	import { ScrollArea } from "$lib/components/ui/scroll-area";
 	import { Button } from "$lib/components/ui/button";
 	import { DataTable } from "$lib/components/data-table";
@@ -43,16 +43,18 @@
 	</div>
 	<div class="flex flex-col gap-y-2">
 		<DataTable.Provider data={resumes} {columns}>
+			<DataTable.SearchBar placeholder="Search resumes by title, date, or keywords…" />
 			<DataTable.Toolbar>
-				<DataTable.SearchBar placeholder="Search resumes by title, date, or keywords…" />
-				<Button>
-					<CirclePlus />
-					Create Resume
-				</Button>
 				{#snippet customBulkActions(isAnyRowSelected: boolean)}
 					<Button variant="outline" class="disabled:opacity-20" disabled={!isAnyRowSelected}>
 						<Download />
 						Download Selected Resumes
+					</Button>
+				{/snippet}
+				{#snippet customActions()}
+					<Button>
+						<Plus />
+						Create Resume
 					</Button>
 				{/snippet}
 			</DataTable.Toolbar>

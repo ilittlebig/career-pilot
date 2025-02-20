@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from "$app/navigation";
-	import { Ellipsis } from "lucide-svelte";
+	import { MoreVertical } from "lucide-svelte";
 	import { DELETE, GET } from "$lib/services/blog-api";
 	import { blogStore } from "$lib/stores/blog-store.svelte";
 	import { buttonVariants } from "$lib/components/ui/button";
@@ -41,7 +41,7 @@
 			class: "relative size-8",
 		})}
 	>
-		<Ellipsis />
+		<MoreVertical />
 		<span class="sr-only">Open menu</span>
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content align="end">
