@@ -28,27 +28,27 @@
 			<Bell />
 		</Button>
 	</Popover.Trigger>
-	<Popover.Content align="end" class="flex flex-col gap-y-6 w-[340px]">
+	<Popover.Content align="end" class="flex flex-col gap-y-4 w-[340px]">
 			<div>
 				<h1 class="font-semibold text-lg">Notifications</h1>
-				<p class="text-sm text-muted-foreground">You have 3 unread messages.</p>
+				<p class="text-xs text-muted-foreground">You have 3 unread messages.</p>
 			</div>
-			<div class="flex flex-col gap-y-4">
+			<div class="flex flex-col gap-y-2">
 				{#each notifications as notification, idx (idx)}
-					<div class="flex items-center gap-x-2">
+					<div class="flex items-center gap-x-2 rounded-md hover:bg-accent p-2">
 						<span class="flex size-2 rounded-full bg-sky-500"></span>
 						<div class="space-y-1">
 							<p class="text-sm font-medium leading-none">
 								{notification.title}
 							</p>
-							<p class="text-muted-foreground text-sm">
+							<p class="text-muted-foreground text-xs">
 								{notification.description}
 							</p>
 						</div>
 					</div>
 				{/each}
 			</div>
-			<Button>
+			<Button size="sm">
 				<Check />
 				Mark all as read
 			</Button>
