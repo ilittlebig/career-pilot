@@ -31,7 +31,7 @@
 </script>
 
 <Select.Root type="single" name="applicationStatus" bind:value>
-	<Select.Trigger class="w-[200px] text-xs h-8">
+	<Select.Trigger class="w-[200px]">
 		{#if value}
 			<span class={[ "font-medium", statusColors[value] ]}>
 				{applicationStatuses.find(s => s.value === value)?.label}

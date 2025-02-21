@@ -1,5 +1,6 @@
 <script lang="ts">
 	import QuickActions from "$lib/components/dashboard/sections/quick-actions.svelte";
+	import NotificationsBell from "$lib/components/notifications-bell.svelte";
 	import UserMenu from "$lib/components/user-menu.svelte";
 	import SearchBar from "$lib/components/search-bar.svelte";
 </script>
@@ -13,6 +14,7 @@
 			</div>
 		</div>
 		<div class="flex items-center gap-x-2 z-10">
+			<NotificationsBell />
 			<UserMenu />
 		</div>
 	</div>
