@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ArrowLeft } from "lucide-svelte";
+	import { ArrowLeft, Plus } from "lucide-svelte";
 	import { ScrollArea } from "$lib/components/ui/scroll-area";
 	import { Button } from "$lib/components/ui/button";
 	import * as Accordion from "$lib/components/ui/accordion";
@@ -52,15 +52,41 @@
 			</Accordion.Root>
 		</div>
 		<ScrollArea class="flex flex-col h-full">
-			<div class="flex justify-center py-4 h-full">
-				<div class="flex flex-col gap-y-0.5 h-full">
+			<div class="flex flex-col items-center py-4 gap-y-3 h-full">
+				<div class="flex flex-col gap-y-1 h-full">
 					<p class="text-muted-foreground text-sm">Page 1</p>
+					<div class="w-[600px] h-[880px] bg-background shadow border rounded-xl shrink-0">
+					</div>
+				</div>
+				<div class="flex flex-col gap-y-0.5 h-full">
+					<p class="text-muted-foreground text-sm">Page 2</p>
 					<div class="w-[600px] h-[880px] bg-background shadow border rounded-xl shrink-0">
 					</div>
 				</div>
 			</div>
 		</ScrollArea>
-		<div class="flex flex-col w-[300px] bg-white h-[calc(100%-32px)] rounded-xl border p-4 shadow absolute right-4 top-4 z-10">
+		<div class="flex flex-col w-[300px] bg-white h-[calc(100%-32px)] rounded-xl border px-4 pt-4 shadow absolute right-4 top-4 z-10">
+			<div>
+				<h3 class="font-medium">Pages</h3>
+				<p class="text-sm text-muted-foreground">
+					Rearrange, duplicate, or add new pages to your resume.
+				</p>
+			</div>
+			<ScrollArea class="flex flex-col h-full w-full">
+				<div class="flex items-center flex-col gap-y-3 mt-4 pb-4">
+					{#each { length: 2 }, i}
+						<div class="flex flex-col gap-y-1 w-full">
+							<p class="text-muted-foreground text-sm">Page {i+1}</p>
+							<div class="w-full max-w-[50%] aspect-[210/297] bg-muted/50 border rounded-lg">
+							</div>
+						</div>
+					{/each}
+				</div>
+				<Button variant="outline" class="w-full">
+					<Plus />
+					Add new page
+				</Button>
+			</ScrollArea>
 		</div>
 	</div>
 </div>
