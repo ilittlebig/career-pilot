@@ -36,7 +36,7 @@
 <Sidebar.Root collapsible="icon">
 	<Sidebar.Header class="flex justify-center h-[72px] ml-auto mr-auto">
 		<a href="/dashboard" class="flex items-center gap-x-2 font-bold text-lg z-10">
-			<img src="icons/rocket.svg" alt="Icon" class="w-4 h-4" />
+			<img src="/icons/rocket.svg" alt="Icon" class="w-4 h-4" />
 			Career Pilot
 		</a>
 	</Sidebar.Header>

@@ -52,7 +52,7 @@
 					</Button>
 				{/snippet}
 				{#snippet customActions()}
-					<Button>
+					<Button href="/resumes/builder">
 						<Plus />
 						Create Resume
 					</Button>
