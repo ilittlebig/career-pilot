@@ -10,7 +10,7 @@ import { formatDate } from "$lib/utils/date";
 import { renderSnippet, renderComponent } from "$lib/components/ui/data-table";
 import { DataTable } from "$lib/components/data-table";
 import { Checkbox } from "$lib/components/ui/checkbox";
-import PostRowActions from "$lib/components/row-actions/post-row-actions.svelte";
+import ResumeRowActions from "$lib/components/row-actions/resume-row-actions.svelte";
 import type { ColumnDef } from "@tanstack/table-core";
 
 export const columns: ColumnDef<any>[] = [
@@ -76,9 +76,9 @@ export const columns: ColumnDef<any>[] = [
 				return {
 					render: () => `<div class="flex justify-end"></div>`,
 					setup: target => {
-						const comp = mount(PostRowActions, {
+						const comp = mount(ResumeRowActions, {
 							target,
-							props: { post },
+							//props: { post },
 						});
 						return () => unmount(comp);
 					}

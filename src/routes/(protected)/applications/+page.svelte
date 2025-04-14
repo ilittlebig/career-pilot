@@ -151,11 +151,17 @@
 </script>
 
 <div class="flex flex-col gap-y-6">
-	<div class="flex flex-col">
-		<h1 class="text-2xl font-semibold">Job Applications</h1>
-		<p class="text-muted-foreground">
-			Monitor your job search progress and keep track of your applications in one place.
-		</p>
+	<div class="flex justify-between">
+		<div class="flex flex-col">
+			<h1 class="text-2xl font-semibold">Job Applications</h1>
+			<p class="text-muted-foreground">
+				Monitor your job search progress and keep track of your applications in one place.
+			</p>
+		</div>
+		<Button>
+			<Plus />
+			Log New Application
+		</Button>
 	</div>
 	<div class="flex flex-col gap-y-2">
 		<DataTable.Provider data={applications} {columns}>
@@ -176,12 +182,6 @@
 					<Button variant="outline" class="disabled:opacity-20" disabled={!isAnyRowSelected}>
 						<Download />
 						Export Selected
-					</Button>
-				{/snippet}
-				{#snippet customActions()}
-					<Button>
-						<Plus />
-						Log New Application
 					</Button>
 				{/snippet}
 			</DataTable.Toolbar>

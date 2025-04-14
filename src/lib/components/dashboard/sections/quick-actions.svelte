@@ -1,8 +1,7 @@
 <script lang="ts">
 	import {
-		FileUp,
+		Plus,
 		FilePen,
-		Search,
 		Bookmark,
 	} from "lucide-svelte";
 	import { Button } from "$lib/components/ui/button";
@@ -15,7 +14,7 @@
 	}
 
 	const actions: QuickAction[] = [
-		{ label: "Upload Resume", icon: FileUp, url: "/resumes", variant: "default" },
+		{ label: "Create Resume", icon: Plus, url: "/resumes", variant: "default" },
 		{ label: "Create Cover Letter", icon: FilePen, url: "/cover-letters", variant: "outline" },
 		{ label: "View Saved Jobs", icon: Bookmark, url: "/saved-jobs", variant: "ghost"	},
 	];

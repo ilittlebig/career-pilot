@@ -25,11 +25,17 @@
 </script>
 
 <div class="flex flex-col gap-y-6">
-	<div class="flex flex-col">
-		<h1 class="text-2xl font-semibold">Cover Letters</h1>
-		<p class="text-muted-foreground">
-			Manage your uploaded cover letters and tailor them for different job applications.
-		</p>
+	<div class="flex justify-between">
+		<div class="flex flex-col">
+			<h1 class="text-2xl font-semibold">Cover Letters</h1>
+			<p class="text-muted-foreground">
+				Manage your uploaded cover letters and tailor them for different job applications.
+			</p>
+		</div>
+		<Button>
+			<Plus />
+			Create Cover Letter
+		</Button>
 	</div>
 	<div class="flex flex-col gap-y-2">
 		<DataTable.Provider data={coverLetters} {columns}>
@@ -39,12 +45,6 @@
 					<Button variant="outline" class="disabled:opacity-20" disabled={!isAnyRowSelected}>
 						<Download />
 						Download Selected Cover Letters
-					</Button>
-				{/snippet}
-				{#snippet customActions()}
-					<Button>
-						<Plus />
-						Create Cover Letter
 					</Button>
 				{/snippet}
 			</DataTable.Toolbar>

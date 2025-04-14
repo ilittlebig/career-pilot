@@ -12,7 +12,7 @@
 	<div class="flex flex-col h-screen w-full">
 		<ProtectedNavbar />
 		<ScrollArea class="flex flex-col px-6 bg-muted/50 h-full">
-			<div class="py-6">
+			<div class="px-1 py-6">
 				{@render children()}
 			</div>
 		</ScrollArea>

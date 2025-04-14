@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { Plus, Download } from "lucide-svelte";
+	import { Download, FileUp } from "lucide-svelte";
 	import { ScrollArea } from "$lib/components/ui/scroll-area";
 	import { Button } from "$lib/components/ui/button";
 	import { DataTable } from "$lib/components/data-table";
+	import CreateResumeDialog from "$lib/components/dialogs/create-resume-dialog.svelte";
 	import { columns } from "./columns";
 
 	const resumes = [
@@ -35,11 +36,20 @@
 </script>
 
 <div class="flex flex-col gap-y-6">
-	<div class="flex flex-col">
-		<h1 class="text-2xl font-semibold">Resumes</h1>
-		<p class="text-muted-foreground">
-			Manage your uploaded resumes and tailor them for different job applications.
-		</p>
+	<div class="flex justify-between">
+		<div class="flex flex-col">
+			<h1 class="text-2xl font-semibold">Resumes</h1>
+			<p class="text-muted-foreground">
+				Manage your uploaded resumes and tailor them for different job applications.
+			</p>
+		</div>
+		<div class="flex gap-x-2">
+			<Button href="/resumes/builder" variant="outline">
+				<FileUp />
+				Upload Resume
+			</Button>
+			<CreateResumeDialog />
+		</div>
 	</div>
 	<div class="flex flex-col gap-y-2">
 		<DataTable.Provider data={resumes} {columns}>
@@ -49,12 +59,6 @@
 					<Button variant="outline" class="disabled:opacity-20" disabled={!isAnyRowSelected}>
 						<Download />
 						Download Selected Resumes
-					</Button>
-				{/snippet}
-				{#snippet customActions()}
-					<Button href="/resumes/builder">
-						<Plus />
-						Create Resume
 					</Button>
 				{/snippet}
 			</DataTable.Toolbar>

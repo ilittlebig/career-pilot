@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ArrowLeft, Plus } from "lucide-svelte";
+	import { ArrowLeft, GripVertical, Plus } from "lucide-svelte";
 	import { ScrollArea } from "$lib/components/ui/scroll-area";
 	import { Button } from "$lib/components/ui/button";
 	import * as Accordion from "$lib/components/ui/accordion";
@@ -30,7 +30,41 @@
 						Basic Info
 					</Accordion.Trigger>
 					<Accordion.Content>
-						<div class="py-4">Hello world</div>
+						<div class="flex flex-col gap-y-2">
+							<div class="flex justify-between items-center px-4 py-2 rounded-lg border bg-muted/50">
+								<div class="flex flex-col">
+									<p class="text-sm font-medium">
+										John Doe | Frontend Developer
+									</p>
+									<p class="text-xs text-muted-foreground">
+										Company | Job Role
+									</p>
+								</div>
+								<GripVertical size={14} class="text-muted-foreground/50" />
+							</div>
+							<div class="flex justify-between items-center px-4 py-2 rounded-lg border bg-muted/50">
+								<div class="flex flex-col">
+									<p class="text-sm font-medium">
+										Stockholm | Sweden
+									</p>
+									<p class="text-xs text-muted-foreground">
+										City | Country
+									</p>
+								</div>
+								<GripVertical size={14} class="text-muted-foreground/50" />
+							</div>
+							<div class="flex justify-between items-center px-4 py-2 rounded-lg border bg-muted/50">
+								<div class="flex flex-col">
+									<p class="text-sm font-medium">
+										johndoe@email.com
+									</p>
+									<p class="text-xs text-muted-foreground">
+										Email
+									</p>
+								</div>
+								<GripVertical size={14} class="text-muted-foreground/50" />
+							</div>
+						</div>
 					</Accordion.Content>
 				</Accordion.Item>
 				<Accordion.Item value="item-2">
